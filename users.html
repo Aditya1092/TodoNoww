@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>TodoNow</title>
+    <script src="https://kit.fontawesome.com/f5515b7c47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body onload="loadbody()" >
+
+    <div class="container">
+        <div class="row h-100">
+            <div class="col-md-4" style="background:url(/img/body-background.jpg);border-radius: 15px;padding: 20px 15px;">
+                <div class="logo position-absolute">
+                    <a href="index.html"><img src="img/logo-black.png" alt="Logo" width="60"></a>
+                </div>
+                <!-- date and time section -->
+                <div class="position-relative h-100 d-flex " style="align-items: flex-end;">
+                    <div>
+                        <h3 class="greet"><b><span id="greetings"></span>, <span id="username"></span></b></h3>
+                        <h5 class="greet" >Save your important work here !</h5>
+                        <div class="date-time greet" >
+                            <span id="date">date</span>
+                            <span id="month">month</span>
+                            <span id="year">year</span>, 
+                            <span id="weekday">weekday</span>
+                        </div><br>
+
+                        <button class="app-btn app-btn-fill" onclick="logout()"><i class="fas fa-sign-out-alt"></i> LOGOUT</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8 p-5">
+                <!-- todos container -->
+                <div class="todo-container" id="todo-container"></div>
+                <!-- todo-form -->
+                <div class="">
+                    <form autocomplete="off" class="form-group" id="form">
+                        <div class="input-group mb-3 d-flex">
+                            <span class="input-group-text">+</span>
+                            <input type="text" class="form-control" id="todos" placeholder="Add your tasks..." required>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    
+        <script>
+       
+             
+            const firebaseConfig = {
+                apiKey: "AIzaSyDkljudsRcZrC4jTp-ch76ezpIl4K4llfI",
+  authDomain: "toda-a8f3c.firebaseapp.com",
+  databaseURL: "https://toda-a8f3c-default-rtdb.firebaseio.com",
+  projectId: "toda-a8f3c",
+  storageBucket: "toda-a8f3c.appspot.com",
+  messagingSenderId: "311825100559",
+  appId: "1:311825100559:web:129623514423262688d87a"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+    
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+         
+        </script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/users.js"></script>
+        <script src="js/login.js"></script>
+    </body>
+    </html>
